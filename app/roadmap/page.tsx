@@ -117,7 +117,7 @@ export default function RoadmapPage() {
                           }}
                         >
                           <Link
-                            href={`/topics/${topic.slug}`}
+                            href={topic.slug === "graphs" ? "/graphs/mastery" : `/topics/${topic.slug}`}
                             className="flex items-center gap-4 p-4 rounded-2xl border border-white/5 bg-zinc-900/30 hover:bg-zinc-900/60 hover:border-white/10 transition-all group"
                           >
                             <div className="shrink-0">

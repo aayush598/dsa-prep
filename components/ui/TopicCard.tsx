@@ -59,13 +59,15 @@ interface TopicCardProps {
 export function TopicCard({ topic, index, completionPercentage = 0 }: TopicCardProps) {
   const Icon = iconMap[topic.icon] || Brain;
 
+  const href = topic.slug === "graphs" ? "/graphs/mastery" : `/topics/${topic.slug}`;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.05 }}
     >
-      <Link href={`/topics/${topic.slug}`} className="block group">
+      <Link href={href} className="block group">
         <div className="relative rounded-2xl border border-white/5 bg-zinc-900/50 p-6 hover:bg-zinc-900/80 transition-all duration-300 hover:border-white/10 hover:shadow-2xl hover:shadow-violet-500/5 overflow-hidden h-full">
           {/* Gradient glow on hover */}
           <div
